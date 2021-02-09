@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> MouseTest </title>
+		<script src="../js/input/Mouse.js"></script>	
+		<style>
+			#square {
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id='square'> </div>
+	<script>
+		mouse = new Mouse();
+		mouse.listen( window, mouse.move );
+		mouse.listen( document.getElementById('square'), mouse.click, function() {
+			console.log( 'oi' );
+		})
+		function loop() {
+			console.log("Mouse {" + mouse.x + ", " + mouse.y + "}");
+			requestAnimationFrame( loop );
+		}
+		loop();
+	</script>
+	</body>
+</html>	

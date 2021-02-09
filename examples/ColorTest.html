@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Color Test </title>
+		<script src="../js/util/Color.js"></script>	
+		<script src="../js/util/reload.js"></script>	
+		<style>
+			#square {
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id='square'> </div>
+	<script>
+		Reload.init( 4 );
+		square = document.getElementById("square");
+		square.style.border = "5px solid";
+		square.style.backgroundColor = new Color( "aquamarine" ).CSS;
+		
+	</script>
+	</body>
+</html>	

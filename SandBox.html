@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<title> SandBox </title>
+    </head>
+    <body></body>
+    <!-- Bibliotecas que não dependem de nenhuma outra -->    
+    <script src="./js/core/Engine.js"></script>
+    <script src="./js/in_out/Preload.js"></script>
+    <script src="./js/util/Reload.js"></script>
+    <script src="./js/util/Timer.js"></script>
+    <script src="./js/physics/Point.js"></script>
+    <script src="./js/physics/Physics.js"></script>
+    <script src="./js/util/MathHelper.js"></script>
+    <script src="./js/util/ObjectContainer.js"></script>    
+    <script src="./js/util/Color.js"></script>
+    <script src="./js/objects/EmmiterManager.js"></script>
+    <script src="./js/objects/Item.js"></script>
+    <script src="./js/objects/Text.js"></script>
+    <script src="./js/objects/Shape.js"></script>
+    <script src="./js/objects/Sprite.js"></script>
+    <script src="./js/objects/Camera.js"></script>
+    <script src="./js/objects/Movable.js"></script>
+    <script src="./js/input/Mouse.js"></script>		
+    <script src="./js/input/Key.js"></script>
+        
+    <script src="./js/core/Screen.js"></script>    
+    <script src="./js/util/DebugBox.js"></script>
+    <script src="./js/core/Enviroment.js"></script>
+    
+
+    <script>
+    
+        for(w=1;w<3;w++) {
+            Preload.load({
+                type: 'image',
+                src:  './img/emoji' + w + '.png',
+                name: 'img' + w
+            });
+        };
+
+        Reload.init(10);
+        Enviroment.setBackgroundColor( new Color("black") );
+        screenSize = Enviroment.getScreenSize();
+        
+        Enviroment.addEmmiter({
+            position: new Point( 300, 300 ),
+            radius: 50,
+            minTime: 200,
+            maxTime: 1000,
+            particle: new MovableObject({
+                            position: new Point(0, 0),
+                            maxVelocity: 1,
+                            shape: new Sprite( new Point(0, 0), {
+                            image: Preload.getResource("img1"),
+                            sizeFactor: 2,
+                            mode: 'center'
+                        })
+                    })
+        });        
+        
+    </script>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

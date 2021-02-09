@@ -1,0 +1,44 @@
+html {
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+body {
+    margin: 0px;
+    background: content-box radial-gradient(#4d4932, #201e1b);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    height: 100%;
+    
+    font-family: monospace;
+}
+
+#puzzle_page {
+    margin: 10px;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    border: 1px solid burlywood;
+    background-color: #634518;
+    color: burlywood;
+}
+
+#puzzle_status {
+    margin-top: 20px;
+    padding: 8px;
+    border: 1px solid burlywood;
+    font-weight: bolder;
+    color: burlywood;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
